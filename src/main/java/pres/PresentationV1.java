@@ -9,7 +9,7 @@ public class PresentationV1 {
         /*
         Injection des depandances par instanciation statique
          */
-        DaoImplV2 d = new DaoImplV2();
+        DaoImpl d = new DaoImpl();
         MetierImpl metier = new MetierImpl(d);//Injection des depandances via les constructeurs
         //metier.setDao(d); //Injection via setter
         System.out.println("RES ="+ metier.calcul());

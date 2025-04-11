@@ -71,3 +71,16 @@ Les contributions sont les bienvenues ! Pour proposer des améliorations :
 
 ## Licence
 Ce projet est sous licence MIT - voir le fichier [LICENSE](LICENSE) pour plus de détails.
+### Mise à Jour : Intégration de Spring
+Le projet inclut désormais deux nouvelles classes principales pour démontrer l'inversion de contrôle et l'injection de dépendances avec **Spring** :
+- **`SpringXMLMain`** : Utilise une configuration basée sur un fichier XML (`applicationContext.xml`).
+- **`SpringAnnotationMain`** : Utilise une configuration basée sur les annotations Spring.
+
+#### Dépendances pour la Version Spring XML
+Pour exécuter la version basée sur XML (`SpringXMLMain`), ajoutez le fichier de configuration Spring suivant (par exemple, `applicationContext.xml`) dans le dossier `src/main/resources` :
+
+```xml
+<bean id="d" class="dao.DaoImpl"></bean>
+<bean id="metier" class="metier.MetierImpl">
+    <constructor-arg ref="d"></constructor-arg>
+</bean>
